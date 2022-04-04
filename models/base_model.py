@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer
-from sqlalchemy.orm import declarative_base, declared_attr, relationship
+from sqlalchemy.orm import declarative_base, declared_attr
 from sqlalchemy.schema import Sequence
 
 
@@ -10,8 +10,7 @@ class Base(object):
 
     __table_args__ = {'mysql_engine': 'InnoDB'}
 
-    id = Column(Integer, Sequence(__name__.lower()+'_id_seq'), primary_key=True)
+    id = Column(Integer, Sequence(__name__.lower() + '_id_seq'), primary_key=True)
 
 
 Base = declarative_base(cls=Base)
-
