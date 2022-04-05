@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer
+from sqlalchemy import Column, Integer, create_engine
 from sqlalchemy.orm import declarative_base, declared_attr
 from sqlalchemy.schema import Sequence
 

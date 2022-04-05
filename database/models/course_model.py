@@ -1,8 +1,8 @@
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 
-from models.assossiation_tables import students_and_courses
-from models.base_model import Base
+from .assossiation_tables import students_and_courses
+from .base_model import Base
 
 
 class Course(Base):
