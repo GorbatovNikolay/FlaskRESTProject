@@ -1,4 +1,4 @@
-from random import choice, randrange
+from random import choice, randrange, randint, sample
 
 from database.models import Student
 from .group_objects_creation import group_objects
@@ -28,3 +28,10 @@ def get_student_objects() -> list:
         ))
 
     return student_objects
+
+
+def assign_courses_to_students(s_objects, c_objects) -> None:
+    """Assigns 1 to 3 random courses to each student."""
+    for student in s_objects:
+        courses = sample(c_objects, k=randint(1, 3))
+        student.courses.extend(courses)
