@@ -10,4 +10,4 @@ class Group(Base):
     students = relationship('Student', back_populates='group')
 
     def __repr__(self):
-        return f'Address(id={self.id!r}, name={self.name!r})'
+        return f'Group(id={self.id!r}, name={self.name!r})'
