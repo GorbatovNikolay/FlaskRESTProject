@@ -1,0 +1,16 @@
+pip
+Jinja2
+pytz
+MarkupSafe
+Werkzeug
+click
+itsdangerous
+greenlet
+postgres
+aniso8601
+setuptools
+SQLAlchemy
+Flask
+six
+zipp
+psycopg2-binary
