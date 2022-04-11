@@ -2,13 +2,15 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 from models import Base, Course, Group, Student
-from objects import db_objects
-from objects.student_objects_creation import assign_courses_to_students
+from processors import db_objects
+from processors.consts import CONNECTION_STR
+from processors.student_processor import FillStudentProcessor
 
 engine = create_engine(
-    'postgresql+psycopg2://my_user:resuetaerc@localhost:5432/task_10',
+    CONNECTION_STR,
     echo=True, future=True
 )
+session = Session(bind=engine)
 
 
 def create_tables() -> None:
@@ -18,9 +20,8 @@ def create_tables() -> None:
 
 def populate_db() -> None:
     """Inserts instances of models to tables."""
-    session = Session(bind=engine)
 
-    assign_courses_to_students(db_objects[1], db_objects[2])
+    FillStudentProcessor.assign_courses_to_students(db_objects[1], db_objects[2])
     for objects, table in zip(db_objects, [Group, Student, Course]):
         if not session.query(table).first():
             session.add_all(objects)
