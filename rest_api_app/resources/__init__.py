@@ -1,3 +1,6 @@
-from .course_resources import AddToCourse, RemoveFromCourse
-from .group_resources import Groups
-from .student_resources import AddStudent, DeleteStudent, Students
+from .course_resources.add_course_resource import AddToCourse
+from .course_resources.remove_course_resource import RemoveFromCourse
+from .group_resources.get_group_resource import Groups
+from .student_resources.add_student_resource import AddStudent
+from .student_resources.delete_student_resource import DeleteStudent
+from .student_resources.get_student_resource import Students
