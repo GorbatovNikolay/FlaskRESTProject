@@ -1,15 +1,16 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-from models import Base, Course, Group, Student
-from processors import db_objects
-from processors.consts import CONNECTION_STR
-from processors.student_processor import FillStudentProcessor
+from .models import Base, Course, Group, Student
+from .processors import db_objects
+from .processors.consts import CONNECTION_STR
+from .processors.student_processor import FillStudentProcessor
 
 engine = create_engine(
     CONNECTION_STR,
     echo=True, future=True
 )
+Base.metadata.bind = engine
 session = Session(bind=engine)
 
 
@@ -34,7 +35,3 @@ def create_db() -> None:
     """Sets up the tables."""
     create_tables()
     populate_db()
-
-
-if __name__ == '__main__':
-    create_db()

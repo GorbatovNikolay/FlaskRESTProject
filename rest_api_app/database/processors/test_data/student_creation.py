@@ -1,6 +1,6 @@
 from random import choice
 
-from database.processors.consts.data_consts import NAMES, LASTNAMES
+from rest_api_app.database.processors.consts.data_consts import NAMES, LASTNAMES
 
 
 def get_students() -> list:

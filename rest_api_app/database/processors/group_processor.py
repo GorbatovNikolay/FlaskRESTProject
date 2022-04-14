@@ -1,4 +1,4 @@
-from database.models import Group
+from rest_api_app.database.models import Group
 from .test_data import groups
 
 
