@@ -2,9 +2,15 @@ from flasgger import Swagger
 from flask import Flask
 from flask_restful import Api
 
-from rest_api_app.resources import (
-    AddStudent, AddToCourse, DeleteStudent,
-    Groups, RemoveFromCourse, Students
+from rest_api_app.resources.course_resources import (
+    AddToCourse,
+    RemoveFromCourse
+)
+from rest_api_app.resources.group_resources import Groups
+from rest_api_app.resources.student_resources import (
+    AddStudent,
+    DeleteStudent,
+    Students
 )
 
 
