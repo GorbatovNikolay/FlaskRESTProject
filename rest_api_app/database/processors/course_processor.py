@@ -1,5 +1,5 @@
-from database.models import Course
-from database.processors.consts import COURSES
+from rest_api_app.database.models import Course
+from rest_api_app.database.processors.consts import COURSES
 
 
 class FillCourseProcessor:

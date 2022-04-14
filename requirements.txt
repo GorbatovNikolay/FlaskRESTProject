@@ -1,4 +1,7 @@
 postgres
 SQLAlchemy
 Flask
+Flask-RESTful
+Flask-SQLAlchemy
 psycopg2-binary
+flasgger

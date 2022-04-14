@@ -1,6 +1,6 @@
 from random import choice, randrange, randint, sample
 
-from database.models import Student, Group
+from rest_api_app.database.models import Student, Group
 
 
 class FillStudentProcessor:
