@@ -18,8 +18,7 @@ def create_app():
     template = {
         'swagger': '2.0',
         'info': {
-            'title': 'Task 10 API',
-            'description': 'API for Task 10 App',
+            'title': 'Flask REST API',
             'version': '0.1'
         },
         'host': '127.0.0.1:5000',
