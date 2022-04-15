@@ -1,7 +1,8 @@
-postgres
-SQLAlchemy
 Flask
 Flask-RESTful
 Flask-SQLAlchemy
-psycopg2-binary
 flasgger
+pytest
+postgres
+psycopg2-binary
+SQLAlchemy
