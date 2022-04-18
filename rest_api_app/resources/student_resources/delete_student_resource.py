@@ -5,19 +5,24 @@ from rest_api_app.database.services import MyQueries
 
 
 class DeleteStudent(Resource):
-    def delete(self, student_id: int):
-        """Deletes a student with a given id from the database.
+    def delete(self, first_name: str, last_name: str):
+        """Deletes a student from the database.
         ---
         tags:
-            - Delete student by id
+            - Delete student
         parameters:
-            - name: student_id
+            - name: first_name
               in: path
-              type: integer
+              type: string
               required: true
-              description: ID of the student that has to be deleted.
+              description: First name of the student that has to be deleted.
+            - name: last_name
+              in: path
+              type: string
+              required: true
+              description: Last name of the student that has to be deleted.
         responses:
             200:
                 description: No unexpected error.
         """
-        return MyQueries.delete_student_by_id(session, student_id)
+        return MyQueries.delete_student(session, first_name, last_name)

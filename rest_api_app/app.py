@@ -30,8 +30,8 @@ def create_app():
     api = Api(app)
     swagger = Swagger(app, template=template)
 
-    api.add_resource(DeleteStudent, '/api/student/<int:student_id>')
     api.add_resource(AddStudent, '/api/student/<string:first_name>/<string:last_name>')
+    api.add_resource(DeleteStudent, '/api/student/<string:first_name>/<string:last_name>')
     api.add_resource(Students, '/api/students/<string:course_name>')
     api.add_resource(Groups, '/api/groups/<int:number_of_students>')
     api.add_resource(RemoveFromCourse, '/api/student/<int:student_id>/course/<int:course_id>')

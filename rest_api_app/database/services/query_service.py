@@ -48,15 +48,16 @@ class MyQueries:
             }
 
     @classmethod
-    def delete_student_by_id(cls, session: Session, student_id: int) -> dict:
+    def delete_student(cls, session: Session, first_name: str, last_name: str) -> dict:
         """Deletes a student with a given id from the database."""
+        stmt = select(Student).where(Student.first_name == first_name and Student.last_name == last_name)
         with session:
-            student = session.get(Student, student_id)
+            student = session.execute(stmt).scalar()
             if student:
                 session.delete(student)
                 session.commit()
-                return {'message': f'Student id={student_id} has been deleted.'}
-            return {'message': f'Student id={student_id} does not exist.'}
+                return {'message': f'Student {student.first_name} {student.last_name} has been deleted.'}
+            return {'message': f'Student {first_name.title()} {last_name.title()} does not exist.'}
 
     @classmethod
     def add_student_to_course(cls, session: Session, student_id: int, course_ids: list) -> dict:
