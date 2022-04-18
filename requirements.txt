@@ -1,0 +1,8 @@
+Flask
+Flask-RESTful
+Flask-SQLAlchemy
+flasgger
+pytest
+postgres
+psycopg2-binary
+SQLAlchemy
